@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"os"
+	"path/filepath"
 	"testing"
 
 	"github.com/matryer/filedb"
@@ -40,7 +41,7 @@ func TestC(t *testing.T) {
 	c, err := db.C("TestCDB")
 	require.NoError(t, err)
 	require.NotNil(t, c)
-	require.Equal(t, c.Path(), "test/db/TestCDB.filedb")
+	require.Equal(t, c.Path(), filepath.Join("test", "db", "TestCDB.filedb"))
 	require.Equal(t, c.DB(), db)
 
 	// same C
