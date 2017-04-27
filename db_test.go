@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/matryer/filedb"
+	"github.com/kompiuter/filedb"
 	"github.com/stretchr/testify/require"
 )
 
