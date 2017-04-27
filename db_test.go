@@ -17,6 +17,7 @@ func setup() {
 }
 
 func TestDial(t *testing.T) {
+	setup()
 
 	db, err := filedb.Dial("test/missing")
 	require.Equal(t, err, filedb.ErrDBNotFound)
@@ -34,6 +35,7 @@ func TestDial(t *testing.T) {
 }
 
 func TestC(t *testing.T) {
+	setup()
 
 	db, err := filedb.Dial("test/db")
 	require.NoError(t, err)
@@ -76,6 +78,7 @@ func TestCollections(t *testing.T) {
 }
 
 func TestInsert(t *testing.T) {
+	setup()
 
 	db, err := filedb.Dial("test/db")
 	require.NoError(t, err)
@@ -90,6 +93,7 @@ func TestInsert(t *testing.T) {
 }
 
 func TestSelectEach(t *testing.T) {
+	setup()
 
 	db, err := filedb.Dial("test/db")
 	require.NoError(t, err)
@@ -121,6 +125,7 @@ func TestSelectEach(t *testing.T) {
 }
 
 func TestForEach(t *testing.T) {
+	setup()
 
 	db, err := filedb.Dial("test/db")
 	require.NoError(t, err)
@@ -147,6 +152,8 @@ func TestForEach(t *testing.T) {
 }
 
 func TestDrop(t *testing.T) {
+	setup()
+
 	db, err := filedb.Dial("test/db")
 	require.NoError(t, err)
 	defer db.Close()
@@ -155,6 +162,7 @@ func TestDrop(t *testing.T) {
 }
 
 func TestRemoveEach(t *testing.T) {
+	setup()
 
 	db, err := filedb.Dial("test/db")
 	require.NoError(t, err)
