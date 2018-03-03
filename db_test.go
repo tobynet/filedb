@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/kompiuter/filedb"
 	"github.com/stretchr/testify/require"
+	"github.com/tobynet/filedb"
 )
 
 func setup() {
